@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/epopeia/lamper.svg?branch=master)](https://travis-ci.org/epopeia/lamper)
+
+[![Coverage Status](https://coveralls.io/repos/github/epopeia/lamper/badge.svg)](https://coveralls.io/github/epopeia/lamper)
+
 Lambda Helper to Api Gateway Lambda Integration
 =======================
 
