@@ -1,8 +1,12 @@
 language: python
 python:
-  - "3.8"
+  - "3.6"
 install:
-  - python setup.py install
-# command to run tests
+  - pip install pytest
+  - pip install pytest-cov
+  - pip install coveralls
+  - python setup.py build
 script:
-  - python setup.py test
+  - pytest --cov=lamper/
+after_success:
+  - coveralls
