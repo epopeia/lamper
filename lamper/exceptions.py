@@ -4,7 +4,7 @@ from lamper import config
 from lamper.https import HttpResponse
 import json
 
-logger = config.logger(__name__)
+logger = config.get_logger(__name__)
 class HttpBaseException(Exception):
     def __init__(self, ret: HttpResponse, body=None):
         self.dict_return = ret

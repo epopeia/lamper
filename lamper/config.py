@@ -2,7 +2,7 @@ import http.client  as http_client
 import logging
 
 
-def logger(name=None, level=None):
+def get_logger(name=None, level=None):
     if not level:
         level = logging.INFO
     http_client.HTTPConnection.debuglevel = 1

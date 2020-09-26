@@ -5,7 +5,7 @@ from lamper import config
 
 default_response_headers = None
 
-logger = config.logger(__name__)
+logger = config.get_logger(__name__)
 
 
 def _custom_response(status_code, body=None):

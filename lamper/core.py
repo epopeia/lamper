@@ -6,7 +6,7 @@ import requests
 from lamper import exceptions, https, config
 from marshmallow.utils import get_value
 
-logger = config.logger(__name__)
+logger = config.get_logger(__name__)
 def registry_components(event=None, context=None, routes=None, default_response_headers=None):
 
     https.default_response_headers = default_response_headers

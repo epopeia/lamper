@@ -51,7 +51,7 @@ def get_body(event, required=True):
 
 # customize a response.text to json. If a 204 status_code founded return ''
 # case not success response, return a ErrorException
-def customize_response(response: Response, logger=config.logger(__name__), show_reason=False):
+def customize_response(response: Response, logger=config.get_logger(__name__), show_reason=False):
     if response.ok:
         if response.status_code == 204:
             return ''
@@ -69,7 +69,7 @@ Validators Helpers
 
 
 # check if exists any errors and return a UnprocessableException
-def check_errors(errors, logger=config.logger(__name__)):
+def check_errors(errors, logger=config.get_logger(__name__)):
     if errors:
         logger.info("SOME FIELDS CONTAINS ERRORS")
         raise UnprocessableException(errors)

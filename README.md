@@ -21,9 +21,9 @@ from lamper import core
 from lamper import decorators
 from lamper.exceptions import HttpBaseException
 from lamper.https import HttpResponse
-from lamper.config import logger
+from lamper.config import get_logger
 
-logger = logger(__name__, level='DEBUG')
+logger = get_logger(__name__, level='DEBUG')
 
 #MODELS
 class ExampleQueryString(Schema):

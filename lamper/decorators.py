@@ -2,7 +2,7 @@ from lamper import config
 from lamper.https import HttpMethod
 
 
-__logger = config.logger(__name__)
+__logger = config.get_logger(__name__)
 
 
 class Mapping(object):
