@@ -1,3 +1,4 @@
+import requests_mock
 from marshmallow import Schema, fields
 
 from lamper import core
