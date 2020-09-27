@@ -23,7 +23,7 @@ def example_service(event):
     return core.callapi(
         querystring_schema=ExampleQueryString,
         response_schema=ExampleResponse,
-        get=requests.get,
+        http_method=core.HttpMethod.GET,
         api_url='http://echo.jsontest.com/key/value/one/two',
         event=event)
 
@@ -55,7 +55,7 @@ if __name__ == '__main__':
         'queryStringParameters': {'idFromApiGateway': '1'}
     }
 
-    #result = lambda_handler(event, None)
+    result = lambda_handler(event, None)
 
 
 #SUCESS RESPONSE

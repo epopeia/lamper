@@ -39,12 +39,12 @@ def example_service(event):
     return core.callapi(
         querystring_schema=ExampleQueryString,
         response_schema=ExampleResponse,
-        get=requests.get,
+        http_method=core.HttpMethod.GET,
         api_url='http://echo.jsontest.com/key/value/one/two',
         event=event)
 
 
-# ROUTES /CONTROLLER
+# ROUTES
 routes = decorators.Mapping()
 
 
