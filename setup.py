@@ -19,7 +19,7 @@ EMAIL = 'willianvieirarosa@gmail.com'
 AUTHOR = 'Willian Vieira'
 REQUIRES_PYTHON = '>=3.6.0'
 TEST_SUITE = "tests"
-SETUP_REQUIRES = ["pytest", "pytest-runner"]
+SETUP_REQUIRES = ["pytest", "pytest-runner", "requests_mock"]
 VERSION = '0.1.1'
 
 # What packages are required for this module to be executed?
