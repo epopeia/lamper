@@ -67,9 +67,6 @@ def callapi(request_schema: Schema = None,
     logger.info(f'calling url:{api_url}')
     logger.info('with headers:')
     logger.info(pformat(request_headers))
-    logger.info('with payload:')
-    if payload:
-        logger.info(pformat(payload))
 
     res = http_method(api_url, **params, headers=request_headers)
 
@@ -88,6 +85,8 @@ def callapi(request_schema: Schema = None,
 
 
 def get_json_body_payload(request_schema, text_body):
+    if not text_body:
+        text_body = '{}'
     data = json.loads(text_body)
     schema = request_schema()
     try:
