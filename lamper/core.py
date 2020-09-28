@@ -15,10 +15,10 @@ logger = config.get_logger(__name__)
 def registry_components(event=None, context=None, routes=None, default_response_headers=None):
     https.default_response_headers = default_response_headers
     resource = event.get('resource', None)
-    assert resource, 'Resource is required'
+    assert resource, 'resource is required'
 
     method = event.get('httpMethod', None)
-    assert method, 'HttpMethod is required'
+    assert method, 'httpMethod is required'
 
     function = routes.routes.get(resource + method, None)
     assert function, 'Invalid resource path resource %s method %s' % (resource, method)

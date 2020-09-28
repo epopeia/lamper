@@ -4,7 +4,7 @@ import pytest
 import requests_mock
 from marshmallow import Schema, fields
 
-from lamper import core, exceptions
+from lamper import core, exceptions, decorators
 
 
 def test_get_callapi(requests_mock):
@@ -115,3 +115,26 @@ def test_post_callapi_with_error(requests_mock):
             http_method=core.HttpMethod.POST,
             api_url=api_url,
             event=event)
+
+
+
+
+
+
+def test_registry_components():
+    event = {
+        'resource': '/example',
+        'httpMethod': 'GET',
+    }
+
+    def get_example(event, context):
+        return 'teste'
+
+    routes = decorators.Mapping()
+    r = routes.get('/example')(get_example)
+
+    result = core.registry_components(event=event,
+                                      routes=routes,
+                                      context=None,
+                                      default_response_headers=None)
+    assert result == 'teste'
