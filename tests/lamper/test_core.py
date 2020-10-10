@@ -194,6 +194,31 @@ def test_post_callapi_with_response_not_found(requests_mock):
             event=event)
 
 
+def test_post_callapi_with_response_unprocessable(requests_mock):
+    event = {
+        'resource': '/example',
+        'httpMethod': 'POST',
+        'body': '{"customer_id":"1", "name": "EPOPEIA"}'
+    }
+
+    class ExampleRequest(Schema):
+        customer_id = fields.Str(required=True)
+        name = fields.Str(required=True)
+
+    class ExampleResponse(Schema):
+        customer = fields.Str()
+        name = fields.Str()
+
+    with pytest.raises(exceptions.UnprocessableException):
+        api_url = 'http://echo.jsontest.com/customer/'
+        requests_mock.post(api_url, status_code=422, text='error')
+        core.callapi(
+            request_schema=ExampleRequest,
+            response_schema=ExampleResponse,
+            http_method=core.HttpMethod.POST,
+            api_url=api_url,
+            event=event)
+
 
 
 def test_post_callapi_with_querystring(requests_mock):
