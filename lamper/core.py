@@ -75,6 +75,8 @@ def callapi(request_schema: Schema = None,
     try:
         res.raise_for_status()
     except requests.exceptions.RequestException as e:
+        if res.status_code == 404:
+            raise exceptions.NotFoundException()
         raise exceptions.UnprocessableException(res.text)
 
     if response_schema:
