@@ -53,5 +53,5 @@ class ErrorException(HttpBaseException):
 
 class CustomException(HttpBaseException):
     def __init__(self, status_code, body=None):
-        super.__init__(HttpResponse.build(status_code), body)
+        super().__init__(HttpResponse.build(status_code), body)
 
