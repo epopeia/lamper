@@ -14,7 +14,7 @@ from setuptools import find_packages, setup, Command
 # Package meta-data.
 NAME = 'lamper'
 DESCRIPTION = 'Lambda Helper for AWS Lambda Api Gateway Integrations'
-URL = 'https://github.com/willianvieira/lamper'
+URL = 'https://github.com/epopeia/lamper'
 EMAIL = 'willianvieirarosa@gmail.com'
 AUTHOR = 'Willian Vieira'
 REQUIRES_PYTHON = '>=3.6.0'
