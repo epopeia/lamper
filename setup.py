@@ -20,7 +20,7 @@ AUTHOR = 'Willian Vieira'
 REQUIRES_PYTHON = '>=3.6.0'
 TEST_SUITE = "tests"
 SETUP_REQUIRES = ["pytest", "pytest-runner", "requests_mock"]
-VERSION = '0.1.2'
+VERSION = '0.1.3'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
